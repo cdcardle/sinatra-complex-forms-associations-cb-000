@@ -12,7 +12,7 @@ class PetsController < ApplicationController
 
   post '/pets' do
     puts params
-    @pet = Pet.new(name: params["pet"]["name"], pets: params["owner_id"])
+    @pet = Pet.new(name: params["pet"]["name"], owner_id: params["owner_id"])
     if !params["owner"]["name"].empty?
       @pets.owner = Owner.create(name: params["owner"]["name"])
     end
